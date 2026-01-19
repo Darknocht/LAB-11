@@ -1,7 +1,10 @@
 export function MenuBar() {
     return (
         <div className="menu-bar">
-            <p>MenuBar</p>
+            <nav>
+                <h1>MyArticles</h1>
+                <img src={"politechnika.jpg"} alt="logo of Politechnika Wroclawska" width={"20%"}/>
+            </nav>
         </div>
     );
 }
