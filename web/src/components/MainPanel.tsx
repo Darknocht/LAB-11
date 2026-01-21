@@ -15,6 +15,12 @@ export function MainPanel() {
             .catch(err => console.error("Error:", err));
     }, []);
 
+    const handleSwitch = () => {
+        const temp = selectedTop;
+        setSelectedTop(selectedBottom);
+        setSelectedBottom(temp);
+    };
+
     return (
         <div className="main-panel">
             <div className="main-content">
@@ -32,8 +38,14 @@ export function MainPanel() {
                 </div>
             </div>
             <div className="side-panels">
-                <TopPanel article={selectedTop} />
-                <BottomPanel article={selectedBottom} />
+                <TopPanel
+                    article={selectedTop}
+                    onClose={() => setSelectedTop(null)}
+                    onSwitch={handleSwitch}/>
+                <BottomPanel
+                    article={selectedBottom}
+                    onClose={() => setSelectedTop(null)}
+                    onSwitch={handleSwitch}/>
             </div>
         </div>
     );
