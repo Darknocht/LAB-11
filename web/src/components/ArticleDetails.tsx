@@ -16,7 +16,7 @@ export function ArticleDetails({ article, onClose, onSwitch }: PanelProps){
                 </div>
             ) : (
                 <div className="placeholder">
-                    <p>No article selected for Top</p>
+                    <p>No article selected</p>
                 </div>
             )}
         </div>

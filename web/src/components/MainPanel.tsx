@@ -44,7 +44,7 @@ export function MainPanel() {
                     onSwitch={handleSwitch}/>
                 <BottomPanel
                     article={selectedBottom}
-                    onClose={() => setSelectedTop(null)}
+                    onClose={() => setSelectedBottom(null)}
                     onSwitch={handleSwitch}/>
             </div>
         </div>
