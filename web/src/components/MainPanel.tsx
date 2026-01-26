@@ -25,16 +25,31 @@ export function MainPanel() {
         <div className="main-panel">
             <div className="main-content">
                 <div className="articles-grid">
-                    {articles.map(article => (
-                        <div key={article.id} className="article-tile">
-                            <h3>{article.name}</h3>
-                            <p className="category-tag">{article.category}</p>
-                            <div className="tile-actions">
-                                <button onClick={() => setSelectedTop(article)}>Top</button>
-                                <button onClick={() => setSelectedBottom(article)}>Bottom</button>
+                    {articles.map(article => {
+                        const isSelectedTop = selectedTop?.id === article.id;
+                        const isSelectedBottom = selectedBottom?.id === article.id;
+
+                        return (
+                            <div key={article.id} className="article-tile">
+                                <h3>{article.name}</h3>
+                                <p className="category-tag">{article.category}</p>
+                                <div className="tile-actions">
+                                    <button
+                                        onClick={() => setSelectedTop(article)}
+                                        className={isSelectedTop ? "btn-active" : ""}
+                                    >
+                                        Top
+                                    </button>
+                                    <button
+                                        onClick={() => setSelectedBottom(article)}
+                                        className={isSelectedBottom ? "btn-active" : ""}
+                                    >
+                                        Bottom
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                    ))}
+                        );
+                    })}
                 </div>
             </div>
             <div className="side-panels">

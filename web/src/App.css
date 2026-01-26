@@ -40,7 +40,7 @@ html, body, #root {
   flex: 1;
   /*background-color: #ffcc44;
   border: 2px solid #333;*/
-  display: flex;
+  display: grid;
   align-items: center;
   justify-content: center;
 }
@@ -139,4 +139,14 @@ nav, footer{
   height: 100%;
   color: white;
   font-style: italic;
+}
+
+.tile-actions button.btn-active {
+  background-color: #4CAF50;
+  color: white;
+  border-color: #388E3C;
+}
+
+.tile-actions button {
+  transition: background-color 0.3s ease;
 }
